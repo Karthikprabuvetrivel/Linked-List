@@ -121,6 +121,14 @@ class LinkedList():
             self.head.prev = None
             temp = None
             return
+
+        elif self.tail.data == element:
+
+            temp = self.tail.prev
+            self.tail = temp
+            self.tail.next = None
+            temp = None
+            return
  
         else:
 
@@ -181,3 +189,15 @@ class LinkedList():
 if __name__ == "__main__":
 
     a= LinkedList()
+    a.insertBegin(4)
+    a.insertBegin(2)
+    a.insertBegin(1)
+    a.insertEnd(5)
+    a.insertEnd(6)
+    a.insertAt(2,3)
+    a.insertAt(5,7)
+    a.showForward()
+    a.showBackward()
+    a.deleteElement(7)
+    a.showForward()
+    a.showBackward()
